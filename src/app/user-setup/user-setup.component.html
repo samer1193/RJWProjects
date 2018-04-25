@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div id="wrap">
+  <!--SHELL START-->
+  <div id="main" class="container clear-top" style="color:#676a6c">
+      <h2>User Setup</h2>
+      <form  class='form-horizontal' #fileForm = "ngForm" id= "fileForm" novalidate>
+          <div class='form-group'>
+              <label for='password' class="col-lg-2 control-label">New password:</label>
+              <div class='col-lg-10'>
+                  <input type='password' name='password' id='password' class='form-control'[ngModel] = "user?.password" (ngModelChange) = "user.password = $event" minlength="6" required>
+                  <h4 class="danger" *ngIf = "errorMsg == 'Passwords must be at least 6 characters.'" >{{errorMsg}}</h4> 
+                  <p>Note: Password must be at least 6 characters long.</p>
+              </div>
+          </div>
+          <div class='form-group '>
+              <label for='confirmPassword' class="col-lg-2 control-label">Confirm new password:</label>
+              <div class='col-lg-10'>
+                  <input type='password' name='confirmpassword' id='confirmpassword' class='form-control' [ngModel] = "user?.confirmPassword" (ngModelChange) = "user.confirmPassword = $event"
+                      minlength="6" required >
+                      <h4 class="danger" *ngIf = "errorMsg == 'Password and confirm password must be the same.'">{{errorMsg}}</h4> 
+              </div>
+
+          </div>
+          <div class='form-group'>
+              <label class="col-lg-2 control-label" for="group1Select"> Security Question1: </label>
+              <div class='col-lg-10'>
+                  <select name="group1Select" id="group1Select" style="color:#666666 !important;" class="form-control" [ngModel] = "user?.securityQuestion1" (ngModelChange) = "user.securityQuestion1 = $event">
+                      <option [ngValue]="null">Select Security Question</option>  
+                    <option 
+                      *ngFor = 'let q of user?.securityQuestionGroup1' [ngValue] = 'q'>
+                      {{q.question}}
+                    </option>
+                    </select>
+              </div>
+          </div>
+          <div class='form-group'>
+              <label class="col-lg-2 control-label" for="answer1"> Answer: </label>
+              <div class='col-lg-10'>
+                  <input type="text" class="form-control" [ngModel] = "user?.answer1" (ngModelChange) = "user.answer1 = $event" name="answer1" id="answer1" required>
+                  <h4 class="danger" *ngIf = "errorMsg == 'Security question answer 1 is required.'">{{errorMsg}}</h4>
+              </div>
+          </div>
+          <div class='form-group' >
+              <label class="col-lg-2 control-label" for="group2Select"> Security Question2: </label>
+              <div class='col-lg-10'>
+                  <select name="group2Select" id="group2Select" style="color:#666666 !important;" class="form-control" [ngModel] = "user?.securityQuestion2" (ngModelChange) = "user.securityQuestion2 = $event">
+                      <option [ngValue]="null">Select Security Question</option>  
+                    <option 
+                      *ngFor = 'let q of user?.securityQuestionGroup2' [ngValue] = 'q'>
+                      {{q.question}}
+                    </option>
+                    </select>
+              </div>
+          </div>
+          <div class='form-group'>
+              <label class="col-lg-2 control-label" for="answer2"> Answer: </label>
+              <div class='col-lg-10'>
+                  <input type="text" class="form-control" [ngModel] = "user?.answer2" (ngModelChange) = "user.answer2 = $event" id="answer2" name="answer2" required>
+                  <h4 class="danger" *ngIf = "errorMsg == 'Security question answer 2 is required.'">{{errorMsg}}</h4>
+              </div>
+          </div>
+          <div class='form-group'>
+              <label class="col-lg-2 control-label" for="answer2"> Security Question3: </label>
+              <div class='col-lg-10'>
+                  <select name="group3Select" id="group3Select" style="color:#666666 !important;" class="form-control" [ngModel] = "user?.securityQuestion3" (ngModelChange) = "user.securityQuestion3 = $event">
+                      <option [ngValue]="null">Select Security Question</option>  
+                    <option 
+                      *ngFor = 'let q of user?.securityQuestionGroup3' [ngValue] = 'q'>
+                      {{q.question}}
+                    </option>
+                    </select>
+              </div>
+          </div>
+          <div class='form-group' >
+              <label class="col-lg-2 control-label" for="answer3"> Answer: </label>
+              <div class='col-lg-10'>
+                  <input type="text" class="form-control" [ngModel] = "user?.answer3" (ngModelChange) = "user.answer3 = $event" name="answer3" id="answer3" required>
+                  <h4 class="danger" *ngIf = "errorMsg == 'Security question answer 3 is required.'">{{errorMsg}}</h4>
+              </div>
+            </div>
+
+          <div class="col-lg-offset-2 col-lg-10 text-center">
+                <span><h4 class="danger" *ngIf = "errorMsgConfirm">{{errorMsgConfirm}}</h4> </span>
+              <button class="btn btn-primary" [disabled] = "!fileForm.form.valid" (click) = "save()" button  style="color:white; background-color: #009999;">Register</button>
+          </div>
+          
+      </form>
+  </div>
+  <!--SHELL END-->
+</div>
+<div id ="footer">
+  <app-footer></app-footer>
+</div>

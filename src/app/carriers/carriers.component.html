@@ -1,0 +1,22 @@
+<!-- <h4>Carriers</h4>
+<hr>
+<div class="form-group">
+  <ng-select [items]="carriers"
+                  #select
+                  bindLabel="name"
+                  dropdownPosition="auto"
+                  placeholder="Select Carrier"
+                  [virtualScroll]="true"
+                  id = 'Carrier'
+                  [(ngModel)] = "search" 
+                  [ngModelOptions]="{standalone: true}"
+                  (input) = "typeahead($event)"
+                  (change) = "test($event)"
+                  name = "Carrier"
+                  #RJWLoadNum = "ngModel"
+                  required>
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          {{item.name}}
+          </ng-template>
+  </ng-select>
+</div> -->

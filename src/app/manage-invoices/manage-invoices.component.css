@@ -1,0 +1,35 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  #acceptedFiles {
+      font-weight: bold;
+  }
+
+  #RJWMoveNum {
+    width: 20%;
+    min-width: 200px;
+  }
+  #RJWLoadNum {
+    width: 20%;
+    min-width: 200px;
+  }
+  #docType {
+    width: 20%;
+    min-width: 200px;
+  }
+  .alert, .alert-danger {
+    width: 20%;
+  }
+
+  .btn-success {
+    background-color: #099;
+    color: white;
+  }
+  #orderWarning {
+    color: red;
+  }

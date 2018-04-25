@@ -1,0 +1,51 @@
+input {
+    width: 70%;
+}
+
+#isActive {
+    width: auto;
+}
+#termsAndConditions {
+    width: auto;
+}
+#isAdmin {
+    width: auto;
+}
+
+.text-right {
+	text-align: right!important
+}
+#Carrier {
+    width: 70%;
+    left: 5%;
+}
+table {
+    width: 70%;
+    left: 15%;
+}
+.text-right {
+    position: absolute;
+    right: 26%;
+}
+.form-horizontal {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height:800px;
+}
+@media (max-width: 1200px) 
+{
+  .form-horizontal{
+    position: relative;
+    overflow-y: auto;
+    max-height:400px;
+  }
+}
+@media (max-width: 767px) 
+{
+  .form-horizontal{
+    position: relative;
+    overflow-y: auto;
+    max-height:500px;
+  }
+}

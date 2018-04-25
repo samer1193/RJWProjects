@@ -1,0 +1,68 @@
+<div class="container-fluid">
+        <h4>Manage Invoices</h4>
+        <hr>
+        <label for="docType">Document Type</label>
+        <select class="form-control" id="docType"
+                required
+                [(ngModel)]="_docType" name="docType"
+                #docType="ngModel"
+                placeholder = "Select Document Type">
+                <option *ngFor="let doc of docTypes" [value]="doc">{{doc}}</option>
+        </select>
+        <form (ngSubmit) = "uploadFileToActivity()" #fileForm = "ngForm" id= "fileForm">
+                <div class="form-group">
+                        <label for="RJWMoveNum">RJW Move Number</label>
+                        <ng-select [items]="loads"
+                                        #select
+                                        bindLabel="movenumber"
+                                        placeholder="Select movement"
+                                        [virtualScroll]="true"
+                                        id = 'RJWMoveNum'
+                                        [(ngModel)] = "model" 
+                                        [ngModelOptions]="{standalone: true}"
+                                        (change) = "onChange($event)"
+                                        name = "RJWMoveNum"
+                                        #RJWMoveNum = "ngModel"
+                                        required>
+                                <ng-template ng-option-tmp let-item="item">
+                                <b>Movement:</b> {{item.movenumber}}
+                                </ng-template>
+                        </ng-select>
+                </div>
+                <div *ngIf= "model?.refnumber && model?.walmartYesNo === 'N' && _docType == 'Signed Delivery Receipt'">
+                        <label for="RJWLoadNum">RJW Load Number</label>
+                        <select class="form-control" id="RJWLoadNum"
+                                required
+                                [(ngModel)]="_selected" name="RJWLoadNum"
+                                #docType="ngModel"
+                                placeholder = "Select Document Type">
+                                <option *ngFor="let ord of selected" [value]="ord">{{ord}}</option>
+                        </select>
+                        <p id = 'orderWarning'>* Select the order that the signed delivery receipt is for.</p>
+                </div>
+                <div class = 'form-group'>
+                        <br>
+                        <input type="file"
+                                id="file"
+                                class = "btn btn-default btn-file"
+                                (change)="handleFileInput($event.target.files)"
+                                accept = ".png,.pdf,.jpg,.jpeg, .tif, .tiff"
+                                />
+                                <span id = 'acceptedFiles'>Accepted File Types: .png, .pdf,.jpg,.jpeg</span>
+                </div>                 
+                <button type = "button" class = "btn btn-success" [disabled] = "!fileForm.form.valid" (click) =  "uploadFileToActivity(); modal1.show(); fileForm.reset()">
+                        Upload
+                </button>
+        </form>
+  <app-modal #modal1>
+    <div class="app-modal-header">
+      Upload Result
+    </div>
+    <div class="app-modal-body">
+            {{result}}
+        </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
+    </div>
+  </app-modal>
+</div>

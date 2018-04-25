@@ -1,0 +1,92 @@
+    <h4>Carrier Profile</h4>
+    <hr>
+    <h4><b>Contact Information</b></h4>
+    <hr>
+<div id = 'profile'>
+    <div class = "row">
+        <div class = "col-lg-4 col-md-6 col-sm-8" id = "carName">
+            <label><b>Carrier Name: </b></label>
+            <input type = "text" [ngModel] = "profile?.caR_NAME" disabled>
+        </div>
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>Login ID: </b></label>
+            <input type = "text" [ngModel] = "profile?.carrierID" disabled>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>Contact: </b></label>
+            <input type = "text" [ngModel] = "profile?.contactName" disabled>
+        </div>
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>MC Number: </b></label>
+            <input type = "text" [ngModel] = "profile?.mCnumber" disabled>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>Phone Number: </b></label>
+            <input type = "text" [ngModel] = "profile?.phoneNumber" disabled>
+        </div>
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>DOT Number: </b></label>
+            <input type = "text" [ngModel] = "profile?.dotnum" disabled>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = 'col-lg-6 col-lg-offset-6 col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6'>
+            <button class = 'btn btn-default' (click) = 'modal1.show()'>Change Password</button>
+        </div>
+    </div>
+
+    <h4><b>Address Information</b></h4>
+    <hr>
+    <div class = "row">
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>Address: </b></label>
+            <input type = "text" [ngModel] = "profile?.address1" disabled>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>City: </b></label>
+            <input type = "text" [ngModel] = "profile?.city" disabled>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-lg-4 col-md-6 col-sm-8">
+            <label><b>State: </b></label>
+            <input type = "text" [ngModel] = "profile?.state" disabled>
+        </div>
+    </div>
+
+    <app-modal #modal1>
+        <div class="app-modal-header">
+          Change Password
+        </div>
+        <div class="app-modal-body">
+            <form #pwChange="ngForm" id = 'pwChange'>
+                <div class = 'form-group'>
+                        <label class = 'modalLabel'><b>Old Password: </b></label>
+                    <input class = 'resetPw' type = 'password' name = 'oldPw' #oldPw="ngModel" [(ngModel)]="password.password" minlength="6" required>
+                    <p *ngIf = "!oldPw.valid && oldPw.touched" class = 'warning'>Must be at least 6 characters.</p>
+                </div>
+                <div class = 'form-group'>
+                    <label class = 'modalLabel'><b>New Password: </b></label>
+                    <input class = 'resetPw' type = 'password' name = 'newPw' #newPw="ngModel" [(ngModel)]="password.currentPassword" minlength="6" required>
+                    <p *ngIf = "!newPw.valid && newPw.touched" class = 'warning'>Must be at least 6 characters.</p>
+                </div>
+                <div class = 'form-group'>
+                    <label class = 'modalLabel'><b>Confirm Password: </b></label>
+                    <input class = 'resetPw' type = 'password' name = 'confirmPw' #confirmPw="ngModel" [(ngModel)]="password.confirmPassword" minlength="6" required>
+                    <p *ngIf = "!confirmPw.valid && confirmPw.touched" class = 'warning'>Must be at least 6 characters.</p>
+                </div>
+                <div class = form-group>
+                <button type="button" class="pull-right btn btn-default" (click)="pwChange.reset();modal1.hide();">Close</button>
+                <button type="button" class="pull-right btn btn-default" (click) = 'changePassword(); modal1.hide(); pwChange.reset();' [disabled] = "!pwChange.form.valid">Save</button>
+                <br>
+                </div>
+            </form>
+        </div>
+      </app-modal>
+</div>

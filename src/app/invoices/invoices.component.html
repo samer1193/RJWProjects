@@ -1,0 +1,15 @@
+<h4>Invoices</h4>
+<hr>
+<!-- <div class = "container-fluid"> -->
+<ag-grid-angular style="width: 90%; height: 40em;"
+        class="ag-theme-balham"
+        (gridReady)="onGridReady($event)"
+        [columnDefs]="columnDefs"
+        [masterDetail] = "true"
+        [detailCellRendererParams]="detailCellRendererParams"
+        [pagination] = "true"
+        [enableSorting] = "true"
+        [enableFilter] = "true"
+        [toolPanelSuppressSideButtons]="true"
+        [detailRowHeight]="detailRowHeight">
+</ag-grid-angular>

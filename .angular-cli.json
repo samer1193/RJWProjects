@@ -19,7 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/ag-grid/dist/styles/ag-grid.css",
+      "../node_modules/ag-grid/dist/styles/ag-theme-fresh.css",
+      "../node_modules/ag-grid/dist/styles/ag-theme-balham.css",
+      "../node_modules/ag-grid/dist/styles/ag-theme-balham-dark.css",
+      "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

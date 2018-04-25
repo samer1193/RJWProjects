@@ -1,0 +1,239 @@
+<app-header></app-header>
+<alert></alert>
+    <div class = "container">
+            <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-md-6 col-md-offset-3">
+    <h3>Welcome to RJW Carrier Portal</h3>
+    <hr>
+    <p>The portal is designed to assist carriers with their documents</p>
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required placeholder="Username" />
+            <div *ngIf="f.submitted && !username.valid" class="help-block" >Username is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required placeholder="Password"/>
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary" style="color:white; background-color: #009999;" id = "btnLogin">Login</button>
+        </div>
+        <div>
+            <a  [routerLink] ="['/forgot-password']" [routerLinkActive] = "['active']" routerLinkActive = "{exact:true}"><span>Forgot password? </span></a>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
+<button id = "openModalButton" type="button" (click)="modal1.show()" [hidden]="true" data-backdrop="static" data-keyboard="false">test</button>
+  <app-modal #modal1>
+    <div class="app-modal-header">
+      Terms and Conditions
+    </div>
+    <div class="app-modal-body">
+    <h1 id = 'mainHeader'>RJW CARRIER PORTAL TERMS OF SERVICE</h1>
+    <ol>
+    <div>
+      <li><h1>ACCEPTANCE OF TERMS</h1></li>
+      <p>RJW Logistics, Inc., an Illinois corporation ("RJW") provides its service to you, ("you" or “your”) subject to the following Terms of Service ("TOS" or “Terms of Service”), which may be updated by us from time to time without notice to you. In addition, when using particular RJW owned or operated services, you shall be subject to any posted guidelines or rules applicable to such services, which may be posted from time to time. All such guidelines or rules are hereby incorporated by reference into the TOS. RJW may also offer other services that are governed by different Terms of Service.</p>
+    </div>
+    <div>
+      <li><h1>DESCRIPTION OF SERVICE</h1></li>
+      <ol type="A">
+        <li>
+          RJW provides users with access to a variety of resources, including communications tools, forums, services, personalized content and branded programming through its network of properties which may be accessed through any various mediums or devices now known or hereafter developed (the "Service").
+        </li>
+        <li>
+          You also understand and agree that the Service may include advertisements which are necessary for RJW to provide the Service. You also understand and agree that the Service may include certain communications from RJW, such as service announcements, administrative messages and newsletters, and that these communications are considered part of RJW membership and you will not be able to opt out of receiving them. Unless explicitly stated otherwise, any new features that enhance the current Service, including the release of new RJW properties, shall be subject to the TOS.
+        </li>
+        <li>
+          You understand and agree that the Service is provided "AS-IS" and that RJW assumes no responsibility for the timeliness, deletion, delivery or failure to store any user communications or personalization settings. You are responsible for obtaining access to the Service which may involve third-party fees (such as internet service provider charges, airtime charges and/or charges incurred in the display or delivery of advertisements) that are at your sole cost and expense. In addition, you must provide and are responsible for all equipment necessary to access the Service.
+        </li>
+        <li>
+          Subject to the terms and conditions of this TOS, RJW shall use commercially reasonable efforts to attempt to provide the Service on a twenty-four (24) hours a day, seven (7) days a week basis throughout the term of this Agreement. You acknowledge and agree that from time to time the Services may be inaccessible or inoperable for any reason, including, without limitation: (i) equipment malfunctions; (ii) periodic maintenance procedures or repairs that RJW may undertake from time to time; or (iii) causes beyond the reasonable control of RJW or that are not reasonably foreseeable by RJW, including, without limitation, interruption or failure of telecommunication or digital transmission links, hostile network attacks, network congestion or other failures. You acknowledge and agree that RJW has no control over the availability of the Services on a continuous or uninterrupted basis.
+        </li>
+      </ol>
+    </div>
+    <div>
+      <li><h1>REGISTRATION OBLIGATIONS</h1></li>
+      <p>In consideration of your use of the Service, you represent that you are of legal age to form a binding contract and are not a person barred from receiving services under the laws of the United States or other applicable jurisdiction. You also agree to: (a) provide true, accurate, current and complete information about yourself as prompted by the Service's registration form (the "Registration Data") and (b) maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If you provide any information that is untrue, inaccurate, not current or incomplete, or RJW has reasonable grounds to suspect that such information is untrue, inaccurate, not current or incomplete, RJW has the right to suspend or terminate your account and refuse any and all current or future use of the Service (or any portion thereof).</p>
+    </div>
+    <div>
+      <li><h1>PRIVACY POLICY</h1></li>
+      <p>Registration Data and certain other information about you is subject to RJW’s current Privacy Policy. You understand that through your use of the Service you consent to the collection and use (as set forth in the Privacy Policy) of this
+information, including the transfer of this information to the United States and/or other countries for storage, processing and use by RJW and their affiliates.</p>
+    </div>
+    <div>
+      <li><h1>MEMBER ACCOUNT; PASSWORDS; SECURITY</h1></li>
+      <p>You will receive a password and account designation upon completing the Service's registration process. You are responsible for maintaining the confidentiality of the password and account and are fully responsible for all activities that occur under your password or account. You agree to (a) immediately notify RJW of any unauthorized use of your password or account or any other breach of security, and (b) ensure that you exit from your account at the end of each session. RJW cannot and will not be liable for any loss or damage arising from your failure to comply with this Section 5.</p>
+    </div>
+    <div>
+      <li><h1>MEMBER CONDUCT</h1></li>
+      <p>You understand that all information, data, text, software, music, sound, photographs, graphics, video, messages, tags, or other materials ("Content"), whether publicly posted or privately transmitted, are the sole responsibility of the person from whom such Content originated. This means that you, and not RJW, are entirely responsible for all Content that you upload, post, email, transmit or otherwise make available via the Service. RJW does not control the Content posted via the Service and, as such, do not guarantee the accuracy, integrity or quality of such Content. You understand that by using the Service, you may be exposed to Content that is offensive, indecent or objectionable. Under no circumstances will RJW be liable in any way for any Content, including, but not limited to, any errors or omissions in any Content, or any loss or damage of any kind incurred as a result of the use of any Content posted, emailed, transmitted or otherwise made available via the Service.</p>
+      <p>You agree to not use the Service to:</p>
+        <ol type = "a">
+          <li>upload, post, email, transmit or otherwise make available any Content that is unlawful, harmful, threatening, abusive, harassing, tortuous, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable;</li>
+          <li>harm minors in any way;</li>
+          <li>impersonate any person or entity, including, but not limited to, an official of RJW, forum leader, guide or host, or falsely state or otherwise misrepresent your affiliation with a person or entity;</li>
+          <li>forge headers or otherwise manipulate identifiers in order to disguise the origin of any Content transmitted through the Service;</li>
+          <li>upload, post, email, transmit or otherwise make available any Content that you do not have a right to make available under any law or under contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements);</li>
+          <li>upload, post, email, transmit or otherwise make available any Content that infringes any patent, trademark, trade secret, copyright or other proprietary rights ("Rights") of any party;</li>
+          <li>upload, post, email, transmit or otherwise make available any unsolicited or unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or any other form of solicitation;</li>
+          <li>upload, post, email, transmit or otherwise make available any material that contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment;</li>
+          <li>disrupt the normal flow of dialogue, cause a screen to "scroll" faster than other users of the Service are able to type, or otherwise act in a manner that negatively affects other users' ability to engage in real time exchanges;</li>
+          <li>interfere with or disrupt the Service or servers or networks connected to the Service, or disobey any requirements, procedures, policies or regulations of networks connected to the Service;</li>
+          <li>intentionally or unintentionally violate any applicable local, state, national or international law, including, but not limited to, regulations promulgated by the U.S. Securities and Exchange Commission, any rules of any national or other securities exchange, including, without limitation, the New York Stock Exchange, the American Stock Exchange or the NASDAQ, and any regulations having the force of law;</li>
+          <li>provide material support or resources (or to conceal or disguise the nature, location, source, or ownership of material support or resources) to any organization(s) designated by the United States government as a foreign terrorist organization pursuant to section 219 of the Immigration and Nationality Act;</li>
+          <li>"stalk" or otherwise harass another; and/or</li>
+          <li>collect or store personal data about other users in connection with the prohibited conduct and activities set forth in paragraphs a through m above.</li>
+        </ol>
+        <br>
+        <p>You acknowledge that RJW may or may not pre-screen Content, but that RJW and its designees shall have the right (but not the obligation) in their sole discretion to pre-screen, refuse, or move any Content that is available via the Service. Without limiting the foregoing, RJW and its designees shall have the right to remove any Content that violates the TOS or is otherwise objectionable. You agree that you must evaluate, and bear all risks associated with, the use of any Content, including any reliance on the accuracy, completeness, or usefulness of such Content. In this regard, you acknowledge that you may not rely on any Content created by RJW or submitted to RJW.
+You acknowledge, consent and agree that RJW may access, preserve and disclose your account information and Content if required to do so by law or in a good faith belief that such access preservation or disclosure is reasonably necessary to: (a) comply with legal process; (b) enforce the TOS; (c) respond to claims that any Content violates the rights of third parties; (d) respond to your requests for customer service; or (e) protect the rights, property or personal safety of RJW, their users and the public.
+You understand that the technical processing and transmission of the Service, including your Content, may involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices.
+You understand that the Service and software embodied within the Service may include security components that permit digital materials to be protected, and that use of these materials is subject to usage rules set by RJW and/or content providers who provide content to the Service. You may not attempt to override or circumvent any of the usage rules embedded into the Service. Any unauthorized reproduction, publication, further distribution or public exhibition of the materials provided on the Service, in whole or in part, is strictly prohibited.</p>
+    </div>
+    <div>
+      <li><h1>CONTENT SUBMITTED OR MADE AVAILABLE FOR INCLUSION ON THE SERVICE</h1></li>
+      <p>RJW does not claim ownership of Content you submit or make available for inclusion on the Service. However, with respect to Content you submit or make available for inclusion on publicly accessible areas of the Service, you grant RJW the following worldwide, royalty-free and non-exclusive license(s), as applicable:</p>
+      <ol type = "A">
+        <li>With respect to Content you submit or make available for inclusion on publicly accessible areas, the license to use, distribute, reproduce, modify, adapt, publicly perform and publicly display such Content on the Service. This license exists only for as long as you elect to continue to include such Content on the Service and will terminate at the time you remove or RJW remove such Content from the Service.</li>
+        <li>With respect to photos, graphics, audio or video you submit or make available for inclusion on publicly accessible areas of the Service, the license to use, distribute, reproduce, modify, adapt, publicly perform and publicly display such Content on the Service solely for the purpose for which such Content was submitted or made available. This license exists only for as long as you elect to continue to include such Content on the Service and will terminate at the time you remove or RJW remove such Content from the Service.</li>
+        <li>With respect to Content other than photos, graphics, audio or video you submit or make available for inclusion on publicly accessible areas of the Service, the perpetual, irrevocable and fully sub-licensable license to use, distribute, reproduce, modify, adapt, publish, translate, publicly perform and publicly display such Content (in whole or in part) and to incorporate such Content into other works in any format or medium now known or later developed.</li>
+        <li>"Publicly accessible" areas of the Service are those areas of the RJW network of properties that are intended by RJW to be available to the general public but do not include areas off of the RJW network such as portions of websites that are accessible via hyperlinks but which are not hosted or served by RJW.</li>
+      </ol>
+    </div>
+    <div>
+      <li><h1>INDEMNIFICATION</h1></li>
+      <p>You agree to indemnify and hold RJW and its subsidiaries, affiliates, officers, agents, employees, partners and licensors harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of Content you submit, post, transmit or otherwise make available through the Service, your use of the Service, your connection to the Service, your violation of the TOS, or your violation of any rights of another.</p>
+    </div>
+    <div>
+      <li><h1>NO RESALE OF SERVICE</h1></li>
+      <p>You agree not to reproduce, duplicate, copy, sell, trade, resell or exploit for any commercial purposes, any portion of the Service, use of the Service, or access to the Service.</p>
+    </div>
+    <div>
+      <li><h1>GENERAL PRACTICES REGARDING USE AND STORAGE</h1></li>
+      <p>You acknowledge that RJW may establish general practices and limits concerning use of the Service, including without limitation the maximum number of days that email messages, message board postings or other uploaded Content will
+be retained by the Service, the maximum number of email messages that may be sent from or received by an account on the Service, the maximum size of any email message that may be sent from or received by an account on the Service, the maximum disk space that will be allotted on RJW’s servers on your behalf, and the maximum number of times (and the maximum duration for which) you may access the Service in a given period of time. You agree that RJW has no responsibility or liability for the deletion or failure to store any messages and other communications or other Content maintained or transmitted by the Service. You acknowledge that RJW reserves the right to log off accounts that are inactive for an extended period of time. You further acknowledge that RJW reserves the right to modify these general practices and limits from time to time.</p>
+    </div>
+    <div>
+      <li><h1>MODIFICATIONS TO SERVICE</h1></li>
+      <p>RJW reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Service (or any part thereof) with or without notice. You agree that RJW shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Service.</p>
+    </div>
+    <div>
+      <li><h1>TERMINATION</h1></li>
+      <p>You agree that RJW may, under certain circumstances and without prior notice, immediately terminate your RJW account, any associated email address, and access to the Service. Cause for such termination shall include, but not be limited to, (a) breaches or violations of the TOS or other incorporated agreements or guidelines, (b) requests by law enforcement or other government agencies, (c) a request by you (self-initiated account deletions), (d) discontinuance or material modification to the Service (or any part thereof), (e) unexpected technical or security issues or problems, (f) extended periods of inactivity, (g) engagement by you in fraudulent or illegal activities, and/or (h) nonpayment of any fees owed by you in connection with the Services. Termination of your RJW account includes (a) removal of access to all offerings within the Service, including but not limited to RJW Mail, Groups, Messenger, Chat, Domains, Personals, Auctions, Message Boards, Greetings, Alerts and Games, (b) deletion of your password and all related information, files and content associated with or inside your account (or any part thereof), and (c) barring of further use of the Service. Further, you agree that all terminations for cause shall be made in RJW’s sole discretion and that RJW shall not be liable to you or any third party for any termination of your account, any associated email address, or access to the Service.</p>
+    </div>
+    <div>
+      <li><h1>DEALINGS WITH ADVERTISERS</h1></li>
+      <p>Your correspondence or business dealings with, or participation in promotions of, advertisers found on or through the Service, including payment and delivery of related goods or services, and any other terms, conditions, warranties or representations associated with such dealings, are solely between you and such advertiser. You agree that RJW shall not be responsible or liable for any loss or damage of any sort incurred as the result of any such dealings or as the result of the presence of such advertisers on the Service.</p>
+    </div>
+    <div>
+      <li><h1>LINKS</h1></li>
+      <p>The Service may provide, or third parties may provide, links to other websites or resources. Because RJW have no control over such sites and resources, you acknowledge and agree that RJW is not responsible for the availability of such external sites or resources, and do not endorse and is not responsible or liable for any Content, advertising, products or other materials on or available from such sites or resources. You further acknowledge and agree that RJW shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such Content, goods or services available on or through any such site or resource.</p>
+    </div>
+    <div>
+      <li><h1>SERVICES RELATING TO FINANCIAL MATTERS</h1></li>
+      <p>The Service is provided for informational purposes only, and no Content included in the Service is intended for trading or investing purposes. RJW shall not be responsible or liable for the accuracy, usefulness or availability of any information transmitted or made available via the Service, and shall not be responsible or liable for any trading or investment decisions based on such information.</p>
+    </div>
+    <div>
+      <li><h1>NO THIRD-PARTY BENEFICIARIES</h1></li>
+      <p>You agree that, except as otherwise expressly provided in this TOS, there shall be no third-party beneficiaries to this agreement.</p>
+    </div>
+    <div>
+      <li><h1>NOTICE</h1></li>
+      <p>RJW may provide you with notices, including those regarding changes to the TOS, by email, regular mail or postings on the Service.</p>
+    </div>
+    <div>
+      <li><h1>TRADEMARK INFORMATION</h1></li>
+      <p>The RJW trademarks and service marks and other RJW logos and product and service names are trademarks of RJW Logistics, Inc. (the "RJW Marks"). Without RJW’s prior permission, you agree not to display or use in any manner the RJW Marks.</p>
+    </div>
+    <div>
+      <li><h1>NOTICE AND PROCEDURE FOR MAKING CLAIMS OF COPYRIGHT OR INTELLECTUAL PROPERTY INFRINGEMENT</h1></li>
+      <ol type = "a">
+        <li>RJW Logistics, Inc. - <br>RJW respects the intellectual property of others, and we ask our users to do the same. RJW may, in appropriate circumstances and at its discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please provide RJW's Copyright Agent the following information: <ol>
+          <li class = 'small'>an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;</li>
+          <li class = 'small'>a description of the copyrighted work or other intellectual property that you claim has been infringed;</li>
+          <li class = 'small'>a description of where the material that you claim is infringing is located on the site;</li>
+          <li class = 'small'>your address, telephone number, and email address;</li>
+          <li class = 'small'>a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li>
+          <li class = 'small'>a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf.</li>
+        </ol></li>
+      </ol>
+      <p>RJW's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:</p>
+      <p>RJW Logistics, Inc.</p>
+      <p>P.O. Box 1309</p>
+      <p>Bolingbrook, IL 60440</p>
+      <p>By phone: (630) 424-2400</p>
+    </div>
+    <div>
+      <li><h1>NO SPAM POLICY</h1></li>
+      <p>You understand and agree that sending unsolicited email advertisements to RJW or through the RJW computer systems is expressly prohibited by this TOS. Any such violations may subject the sender and his/her/its agents to civil and/or criminal penalties.</p>
+    </div>
+    <div>
+      <li><h1>EXPORT CONTROLS</h1></li>
+      <p>The Software and the Service is further subject to United States export controls. No Software may be downloaded from the website or otherwise exported or re-exported (i) into (or to a national or resident of) any county to which the United States has embargoed, or other prohibited delivery of, goods, (ii) to anyone on the United States Treasury Department’s list of Specially Designated Nationals, on the United States Commerce Departments Table of Deny Orders, on any other list of the federal or state governments. By downloading and/or using the Software, you represent and warrant that you are not located in, under the control of, or a national or resident of any such country or on any such list.</p>
+    </div>
+    <div>
+      <li><h1>INTERSTATE NATURE OF COMMUNICATIONS</h1></li>
+      <p>When you register with RJW, you acknowledge that in using RJW services to send electronic communications (including but not limited to email, search queries, sending messages, uploading photos and files, and other Internet activities), you will be causing communications to be sent through RJW’s computer networks, portions of which are located in Illinois and portions of which may be located in other locations in the United States or abroad. Accordingly, by agreeing to this Terms of Service, you acknowledge that use of the service results in interstate data transmissions.</p>
+    </div>
+    <div>
+      <li><h1>SPECIAL ADMONITIONS FOR INTERNATIONAL USE</h1></li>
+      <p>Recognizing the global nature of the Internet, you agree to comply with all local rules regarding online conduct and acceptable Content. Specifically, you agree to comply with all applicable laws regarding the transmission of technical data exported from the United States or the country in which you reside.</p>
+    </div>
+    <div>
+      <li><h1>DISCLAIMER OF WARRANTIES</h1></li>
+      <p>YOU EXPRESSLY UNDERSTAND AND AGREE THAT:</p><br>
+      <p>YOUR USE OF THE SERVICE IS AT YOUR SOLE RISK. THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. THE PARTIES AND THEIR SUBSIDIARIES, AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS AND LICENSORS EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY
+KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.</p>
+      <p>THE PARTIES AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS AND LICENSORS MAKE NO WARRANTY THAT (i) THE SERVICE WILL MEET YOUR REQUIREMENTS; (ii) THE SERVICE WILL BE UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE; (iii) THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE SERVICE WILL BE ACCURATE OR RELIABLE; (iv) THE QUALITY OF ANY PRODUCTS, SERVICES, INFORMATION OR OTHER MATERIAL PURCHASED OR OBTAINED BY YOU THROUGH THE SERVICE WILL MEET YOUR EXPECTATIONS; AND (v) ANY ERRORS IN THE SOFTWARE WILL BE CORRECTED.</p>
+      <p>ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SERVICE IS ACCESSED AT YOUR OWN DISCRETION AND RISK, AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH MATERIAL.</p>
+      <p>NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM THE PARTIES OR THROUGH OR FROM THE SERVICE SHALL CREATE ANY WARRANTY NOT EXPRESSLY STATED IN THE TOS.</p>
+      <p>A SMALL PERCENTAGE OF USERS MAY EXPERIENCE EPILEPTIC SEIZURES WHEN EXPOSED TO CERTAIN LIGHT PATTERNS OR BACKGROUNDS ON A COMPUTER SCREEN OR WHILE USING THE SERVICE. CERTAIN CONDITIONS MAY INDUCE PREVIOUSLY UNDETECTED EPILEPTIC SYMPTOMS EVEN IN USERS WHO HAVE NO HISTORY OF PRIOR SEIZURES OR EPILEPSY. IF YOU, OR ANYONE IN YOUR FAMILY, HAVE AN EPILEPTIC CONDITION, CONSULT YOUR PHYSICIAN PRIOR TO USING THE SERVICE. IMMEDIATELY DISCONTINUE USE OF THE SERVICE AND CONSULT YOUR PHYSICIAN IF YOU EXPERIENCE ANY OF THE FOLLOWING SYMPTOMS WHILE USING THE SERVICE: DIZZINESS, ALTERED VISION, EYE OR MUSCLE TWITCHES, LOSS OF AWARENESS, DISORIENTATION, ANY INVOLUNTARY MOVEMENT, OR CONVULSIONS.</p>
+    </div>
+    <div>
+      <li><h1>LIMITATION OF LIABILITY</h1></li>
+      <p>YOU EXPRESSLY UNDERSTAND AND AGREE THE PARTIES AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS AND LICENSORS SHALL NOT BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF THE PARTIES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM: (i) THE USE OR THE INABILITY TO USE THE SERVICE; (ii) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS AND SERVICES RESULTING FROM ANY GOODS, DATA, INFORMATION OR SERVICES PURCHASED OR OBTAINED OR MESSAGES RECEIVED OR TRANSACTIONS ENTERED INTO THROUGH OR FROM THE SERVICE; (iii) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; (iv) STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SERVICE; OR (v) ANY OTHER MATTER RELATING TO THE SERVICE.</p>
+    </div>
+    <div>
+      <li><h1>EXCLUSIONS AND LIMITATIONS</h1></li>
+      <p>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS OF SECTIONS 32 AND 33 MAY NOT APPLY TO YOU.</p>
+    </div>
+    <div>
+      <li><h1>ENTIRE AGREEMENT.</h1></li>
+      <p>The TOS constitutes the entire agreement between you and RJW and governs your use of the Service, superseding any prior agreements between you RJW with respect to the Service.</p>
+    </div>
+    <div>
+      <li><h1>CHOICE OF LAW AND FORUM.</h1></li>
+      <p>The TOS and the relationship between you and RJW shall be governed by the laws of the State of Illinois without regard to its conflict of law provisions. You and RJW agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Will, Illinois.</p>
+    </div>
+    <div>
+      <li><h1>WAIVER AND SEVERABILITY OF TERMS.</h1></li>
+      <p>The failure of RJW to exercise or enforce any right or provision of the TOS shall not constitute a waiver of such right or provision. If any provision of the TOS is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of the TOS remain in full force and effect.</p>
+    </div>
+    <div>
+      <li><h1>NO RIGHT OF SURVIVORSHIP AND NON-TRANSFERABILITY.</h1></li>
+      <p>You agree that your RJW account is non-transferable and any rights to your RJW ID or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, your account may be terminated and all contents therein permanently deleted.</p>
+    </div>
+    <div>
+      <li><h1>STATUTE OF LIMITATIONS.</h1></li>
+      <p>You agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Service or the TOS must be filed within one (1) year after such claim or cause of action arose or be forever barred.</p>
+    </div>
+    <div>
+      <li><h1>HEADINGS.</h1></li>
+      <p>The headings and section titles in the TOS are for convenience only and have no legal or contractual effect.</p>
+    </div>
+    <div>
+      <li><h1>VIOLATIONS</h1></li>
+      <p>Please report any violations of the TOS to RJW.</p>
+    </div>
+    </ol>
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="accept(); modal1.hide()">Agree</button>
+    </div>
+  </app-modal>
+<div id = 'footer'>
+<app-footer></app-footer>
+</div>
