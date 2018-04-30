@@ -28,32 +28,17 @@ export class ManageInvoicesComponent implements OnInit {
   public selected = [];
   public dataResultMovement: Array<{}>;
   public _selected: string;
-<<<<<<< HEAD
   public loading = false;
   
-=======
-  public loading: boolean;
->>>>>>> CarrierPortalEdits
   constructor(
     private fileUploadService: fileUploadService
   ) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-=======
-    this.loading = false;
-    this.model = null;
->>>>>>> CarrierPortalEdits
     this.getLoads()
   }
 
   handleFileInput(files: FileList) {
-<<<<<<< HEAD
-=======
-    console.log(files.item(0).name);
-    var file = document.getElementById('fileName')
-    document.getElementById('fileName').innerHTML = files.item(0).name;
->>>>>>> CarrierPortalEdits
     this.fileToUpload = files.item(0);
   }
 

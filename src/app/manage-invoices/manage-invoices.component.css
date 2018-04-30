@@ -21,30 +21,20 @@
   #docType {
     width: 20%;
     min-width: 200px;
-<<<<<<< HEAD
-=======
     margin-bottom: 6px;
->>>>>>> CarrierPortalEdits
   }
   .alert, .alert-danger {
     width: 20%;
   }
-<<<<<<< HEAD
-
-=======
   #moveNum {
     margin-bottom: 4px;
   }
->>>>>>> CarrierPortalEdits
   .btn-success {
     background-color: #099;
     color: white;
   }
   #orderWarning {
     color: red;
-<<<<<<< HEAD
-  }
-=======
   }
   .inputfile {
     width: 0.1px;
@@ -79,4 +69,3 @@
     margin-top: -0.25em;
     margin-right: 0.25em;
 }
->>>>>>> CarrierPortalEdits

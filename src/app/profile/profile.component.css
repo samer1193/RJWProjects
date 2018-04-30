@@ -65,12 +65,9 @@ input {
 .warning {
     color: red;
     text-align: center;
-<<<<<<< HEAD
-=======
 }
 #loading {
     position: fixed;
     top: 50%;
     left: 50%;
->>>>>>> CarrierPortalEdits
 }
