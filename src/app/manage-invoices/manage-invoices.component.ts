@@ -28,6 +28,7 @@ export class ManageInvoicesComponent implements OnInit {
   public selected = [];
   public dataResultMovement: Array<{}>;
   public _selected: string;
+  public loading = false;
   
   constructor(
     private fileUploadService: fileUploadService
@@ -51,6 +52,7 @@ export class ManageInvoicesComponent implements OnInit {
           result => {
             this.message = result as any;
             this.result = this.message.message
+            this.loading = true;
         }, error => {
           console.log(error)
         } 

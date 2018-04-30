@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   model: any = {};
   CarrierId: string;
   public password: Password = new Password()
+  public loading = false;
   constructor(
     private route: ActivatedRoute,
     private http:Http,
@@ -34,6 +35,7 @@ export class ProfileComponent implements OnInit {
     .subscribe(
       results => {this.profile = results
       this.profile.carrierID = sessionStorage.getItem('currentUser') as any
+      this.loading = true;
       }
     )    
   }
