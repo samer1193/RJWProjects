@@ -1,15 +1,11 @@
 #btnLogin {
     width: 100%;
 }
-@media (min-width: 1200px) {
-  #footer {
-     position:absolute;
-      bottom:0;
-      width:100%;
-      max-height: 200px;
-      overflow:hidden;
-      margin-top: 100px;
-   }
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    max-height: 200px;
   }
  #mainHeader {
   text-align: center;
