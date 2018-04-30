@@ -13,17 +13,34 @@
 .ng-select .ng-control {
   left: 200px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> CarrierPortalEdits
  }
 .navbar-fixed-left .navbar-nav > li { 
   float: none;  
   width: 100%;
 }
 
+<<<<<<< HEAD
 
 .container {
   height: 100%;
 }
 
+=======
+.active {
+  border-bottom: 3px solid #099;
+  background: #eee;
+}
+.container {
+  height: 100%;
+}
+a {
+  color: #099;
+}
+>>>>>>> CarrierPortalEdits
 .navbar {
   margin-bottom: 0px;
 }
@@ -40,9 +57,15 @@
   height: 100%;
   width: 100%;
 } */
+<<<<<<< HEAD
 .navbar-inverse .navbar-nav > li > a {
   color: #099;
 }
+=======
+/* .navbar-inverse .navbar-nav > li > a {
+  color: #099;
+} */
+>>>>>>> CarrierPortalEdits
  #logout {
    color:white;
    background-color: transparent;
@@ -53,9 +76,15 @@
   background-color: transparent;
   border-color: transparent;
 }
+<<<<<<< HEAD
  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: black;
 } 
+=======
+ /* .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: black;
+}  */
+>>>>>>> CarrierPortalEdits
 
 #top-responsive {
   display: none;

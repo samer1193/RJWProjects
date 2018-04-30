@@ -12,12 +12,19 @@ import 'rxjs/Rx' ;
 
 export class LoginComponent implements OnInit {
     model: any = {};
+<<<<<<< HEAD
     loading = false;
+=======
+>>>>>>> CarrierPortalEdits
     grant_type = "password";
     returnUrl: string;
     public visible = false;
     private terms: boolean;
     pdfSrc: string;
+<<<<<<< HEAD
+=======
+    public loading: boolean;
+>>>>>>> CarrierPortalEdits
 
   public visibleAnimate = false;
     constructor(
@@ -29,6 +36,10 @@ export class LoginComponent implements OnInit {
         ) { }
 
     ngOnInit() {
+<<<<<<< HEAD
+=======
+        this.loading = false;
+>>>>>>> CarrierPortalEdits
         // reset login status
         this.authenticationService.logout();
 
@@ -45,12 +56,23 @@ export class LoginComponent implements OnInit {
                     if (sessionStorage.getItem('acceptedTermsConditions') == 'False'){
                         // this.getTC();
                         document.getElementById("openModalButton").click();
+<<<<<<< HEAD
                     }else {
                     this.router.navigate([this.returnUrl]);
+=======
+                        this.loading = false;
+                    }else {
+                    this.router.navigate([this.returnUrl]);
+                    this.loading = false;
+>>>>>>> CarrierPortalEdits
                     }
                     // this.router.navigate([this.returnUrl]);
                 },
                 error => {
+<<<<<<< HEAD
+=======
+                    console.log(error);
+>>>>>>> CarrierPortalEdits
                     this.alertService.error('Username or password is incorrect');
                     this.loading = false;
                 });

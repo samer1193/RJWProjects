@@ -1,6 +1,7 @@
 #btnLogin {
     width: 100%;
 }
+<<<<<<< HEAD
 @media (min-width: 1200px) {
   #footer {
      position:absolute;
@@ -10,6 +11,13 @@
       overflow:hidden;
       margin-top: 100px;
    }
+=======
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    max-height: 200px;
+>>>>>>> CarrierPortalEdits
   }
  #mainHeader {
   text-align: center;

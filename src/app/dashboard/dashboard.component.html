@@ -15,7 +15,10 @@
             bindLabel="id"
             dropdownPosition="auto"
             placeholder="Select Carrier"
+<<<<<<< HEAD
             [virtualScroll]="true"
+=======
+>>>>>>> CarrierPortalEdits
             id = 'Carrier'
             [(ngModel)] = "selectedCarrier"
             [ngModelOptions]="{standalone: true}"
@@ -43,7 +46,11 @@
     <div class = "col-lg-2">
     <nav class="collapse navbar-collapse flex-md-unordered flex-last">
     <div class="navbar navbar-inverse navbar-fixed-left">
+<<<<<<< HEAD
         <ul class="nav navbar-nav">
+=======
+        <ul class="nav nav-sidebar">
+>>>>>>> CarrierPortalEdits
             <li><a [routerLink] ="['/dashboard/profile']" [routerLinkActive] = "['active']" routerLinkActive = "{exact:true}"><span><span class="glyphicon glyphicon-user"></span>  Profile </span></a></li>
             <li><a [routerLink] ="['/dashboard/invoices']" [routerLinkActive] = "['active']" routerLinkActive = "{exact:true}"><span> <span class="glyphicon glyphicon-list"></span> Invoices </span></a></li>
             <li><a  [routerLink] ="['/dashboard/manage']" [routerLinkActive] = "['active']" routerLinkActive = "{exact:true}"><span><span class="glyphicon glyphicon-upload"></span> Upload Docs </span></a></li>

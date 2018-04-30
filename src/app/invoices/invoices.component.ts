@@ -49,7 +49,12 @@ export class InvoicesComponent implements OnInit {
           }
       }
   }
+<<<<<<< HEAD
   ngOnInit() { }
+=======
+  ngOnInit() { 
+  }
+>>>>>>> CarrierPortalEdits
   onGridReady(params): void {
       this.gridapi = params.api;
       this.gridcolumnApi = params.columnApi;
@@ -57,7 +62,11 @@ export class InvoicesComponent implements OnInit {
       this.InvoiceService.getInvoices(sessionStorage.getItem('selectedCarrierId'))
       .subscribe(
           invoice => {
+<<<<<<< HEAD
                 params.api.setRowData(invoice);                
+=======
+                params.api.setRowData(invoice);             
+>>>>>>> CarrierPortalEdits
           },
           error => {
               console.log(error);

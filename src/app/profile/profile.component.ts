@@ -17,7 +17,11 @@ export class ProfileComponent implements OnInit {
   model: any = {};
   CarrierId: string;
   public password: Password = new Password()
+<<<<<<< HEAD
   public loading = false;
+=======
+  private loading: boolean;
+>>>>>>> CarrierPortalEdits
   constructor(
     private route: ActivatedRoute,
     private http:Http,
@@ -28,6 +32,10 @@ export class ProfileComponent implements OnInit {
   ) {
    }
   ngOnInit() {
+<<<<<<< HEAD
+=======
+    this.loading = false;
+>>>>>>> CarrierPortalEdits
     this.password.confirmPassword = '';
     this.password.currentPassword = '';
     this.password.password = '';
