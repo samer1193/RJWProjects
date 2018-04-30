@@ -69,3 +69,6 @@
     margin-top: -0.25em;
     margin-right: 0.25em;
 }
+#upload {
+  min-width: 200px;
+}

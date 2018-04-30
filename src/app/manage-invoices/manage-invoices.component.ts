@@ -35,6 +35,7 @@ export class ManageInvoicesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.model = null;
     this.getLoads()
   }
 
