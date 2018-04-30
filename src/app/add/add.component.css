@@ -1,0 +1,48 @@
+input {
+    width: 70%;
+}
+
+#isAdmin {
+    width: auto;
+    position: left;
+}
+
+.text-right {
+    position: absolute;
+    right: 26%;
+}
+#Carrier {
+    width: 70%;
+}
+
+table {
+    width: 70%;
+}
+/* #fileForm {
+    text-align: right;
+} */
+label {
+    width: 15%;
+}
+#fileForm {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height:800px;
+}
+@media (max-width: 1200px) 
+{
+    #fileForm{
+    position: relative;
+    overflow-y: auto;
+    max-height:400px;
+  }
+}
+@media (max-width: 767px) 
+{
+    #fileForm{
+    position: relative;
+    overflow-y: auto;
+    max-height:500px;
+  }
+}

@@ -1,0 +1,13 @@
+.container {
+    padding-left: 0px;
+    margin-left: 0px;
+    border-left: 0px;
+}
+.ag-theme-balham .ag-group-expanded .ag-icon-contracted:empty {
+     background-image: url(https://i.imgur.com/AUKq6RA.png)
+ }
+ #loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}

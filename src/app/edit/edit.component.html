@@ -1,0 +1,104 @@
+<h4>Edit Users</h4>
+<hr>
+<!-- <form [formGroup] = "form">
+  <input formControlName = 'firstName' class = "form-control">
+  <button type = "submit" class = "btn btn-default">Submit</button>
+</form>
+
+<pre>{{form.value | json}}</pre>
+<pre>isValid: {{form.valid}}</pre> -->
+
+<form name="form" class='form-horizontal' novalidate>
+    <div class="form-group">
+        <label class='col-lg-2 control-label' for="firstName"></label>
+        <div class='col-lg-10'>
+             <h4 class='text-danger'>NOTE: When changing roles or Site Administrator privileges the user must logout for the changes to take effect</h4>
+        </div>
+    </div>
+    <div class = 'form-group'>
+      <label class='col-lg-2 control-label' for="userName">User Name:</label>
+      <div class = 'col-lg-10'>
+        <input *ngIf = 'user' type = 'text' class = 'form-control' [(ngModel)] = 'user.userName'  name="userName" id = "userName" required autofocus empty-to-null disabled='true'>
+    </div>
+    </div>
+    <div class = 'form-group'>  
+      <label class='col-lg-2 control-label' for="firstName">First Name:</label>
+      <div class = 'col-lg-10'>
+        <input *ngIf = 'user' type = 'text' class = 'form-control' [(ngModel)] = 'user.firstName' [ngModelOptions]="{updateOn: change}" name="firstName" id = "firstName" required autofocus empty-to-null>
+      </div>
+    </div>
+    <div class = 'form-group'>  
+      <label class='col-lg-2 control-label' for="lastName">Last Name:</label>
+      <div class = 'col-lg-10'>
+        <input *ngIf = 'user' type = 'text' class = 'form-control' [(ngModel)] = 'user.lastName' [ngModelOptions]="{updateOn: change}" name="lastName" id = "lastName" required autofocus empty-to-null>
+      </div>
+    </div>
+    <div class = 'form-group'>
+      <label class='col-lg-2 control-label' for="email">Email:</label>
+      <div class = 'col-lg-10'>
+        <input *ngIf = 'user' type = 'text' class = 'form-control' [(ngModel)] = 'user.email' [ngModelOptions]="{updateOn: change}" name="email" id = "email" required autofocus empty-to-null>
+      </div>
+    </div>
+    <div class = 'form-group'>  
+      <label class='col-lg-2 control-label' for="contactAddress">Contact Address:</label>
+      <div class = 'col-lg-10'>
+        <input *ngIf = 'user' type = 'text' class = 'form-control' [(ngModel)] = 'user.contactAddress' [ngModelOptions]="{updateOn: change}" name="contactAddress" id = "contactAddress" required autofocus empty-to-null>
+      </div>
+    </div>
+    <div class = 'form-group'>  
+      <label class='col-lg-2 control-label' for="phoneNumber">Phone Number:</label>
+      <div class = 'col-lg-10'>
+        <input *ngIf = 'user' type = 'text' class = 'form-control' [(ngModel)] = 'user.phoneNumber' [ngModelOptions]="{updateOn: change}" name="phoneNumber" id = "phoneNumber" required autofocus empty-to-null>
+      </div>
+    </div>
+    <div class='col-lg-offset-2 col-lg-10'>
+            <input *ngIf = 'user' type='checkbox' i-check [(ngModel)] = 'user.isActive' [ngModelOptions]="{updateOn: change}" name="isActive" id = "isActive"/>
+            <label class='control-label' for="isActive">Active</label>
+    </div>
+    <div class='col-lg-offset-2 col-lg-10'>
+            <input *ngIf = 'user' type='checkbox' [(ngModel)] = 'user.termsAndConditions' [ngModelOptions]="{updateOn: change}"name="termsAndConditions" id = "termsAndConditions"/>
+            <label class='control-label' for="termsAndConditions">Accepted Terms And Conditions</label>
+    </div>
+    <div class='col-lg-offset-2 col-lg-10'>
+            <input *ngIf = 'user' type='checkbox' i-check [(ngModel)] = 'user.isAdmin' [ngModelOptions]="{updateOn: change}" name="isAdmin" id = "isAdmin"/>
+            <label class='control-label' for="isAdmin">Site Administrator</label>
+    </div>
+    <h4>Carriers</h4>
+    <hr>
+    <div class="form-group">
+      <ng-select [items]="carriers"
+                      #select
+                      bindLabel="name"
+                      dropdownPosition="auto"
+                      placeholder="Select Carrier"
+                      [virtualScroll]="true"
+                      id = 'Carrier'
+                      [(ngModel)] = "_selected" 
+                      [ngModelOptions]="{standalone: true}"
+                      (input) = "typeahead($event)"
+                      name = "Carrier"
+                      #RJWLoadNum = "ngModel"
+                      required>
+              <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+              {{item.name}}
+              </ng-template>
+      </ng-select>
+    </div>
+    <span><button class = 'btn btn-primary' (click) = 'add(_selected)' [disabled] = '!_selected' >Add</button></span>
+    <table class = 'table table-striper'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+        <tr *ngFor="let car of selectedCarriers">
+          <td> {{car.name}} </td>
+          <td><button class = 'btn btn-primary' (click) = 'remove(car)'>Remove</button></td>
+        </tr>
+    </table>
+    <div class="text-right">
+      <button type = "submit" class="btn btn-primary" (click)="save()">Save</button>
+      <button class="btn btn-default" [routerLink] ="['/dashboard/admin']">Cancel</button> 
+    </div>
+</form>

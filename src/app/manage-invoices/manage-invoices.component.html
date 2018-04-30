@@ -1,0 +1,78 @@
+<div class="container-fluid">
+        <h4>Manage Invoices</h4>
+        <hr>
+        <label for="docType">Document Type</label>
+        <select class="form-control" id="docType"
+                required
+                [(ngModel)]="_docType" name="docType"
+                #docType="ngModel"
+                placeholder = "Select Document Type">
+                <option *ngFor="let doc of docTypes" [value]="doc">{{doc}}</option>
+        </select>
+        <form (ngSubmit) = "uploadFileToActivity()" #fileForm = "ngForm" id= "fileForm">
+                <div class="form-group" id = "moveNum">
+                        <label for="RJWMoveNum">RJW Move Number</label>
+                        <ng-select [items]="loads"
+                                        #select
+                                        bindLabel="movenumber"
+                                        placeholder="Select movement"
+                                        [virtualScroll]="true"
+                                        id = 'RJWMoveNum'
+                                        [(ngModel)] = "model" 
+                                        [ngModelOptions]="{standalone: true}"
+                                        (change) = "onChange($event)"
+                                        name = "RJWMoveNum"
+                                        #RJWMoveNum = "ngModel"
+                                        required>
+                                <ng-template ng-option-tmp let-item="item">
+                                <b>Movement:</b> {{item.movenumber}}
+                                </ng-template>
+                        </ng-select>
+                </div>
+                <div *ngIf= "model?.refnumber && model?.walmartYesNo === 'N' && _docType == 'Signed Delivery Receipt'">
+                        <label for="RJWLoadNum">RJW Load Number</label>
+                        <select class="form-control" id="RJWLoadNum"
+                                required
+                                [(ngModel)]="_selected" name="RJWLoadNum"
+                                #docType="ngModel"
+                                placeholder = "Select Document Type">
+                                <option *ngFor="let ord of selected" [value]="ord">{{ord}}</option>
+                        </select>
+                        <p id = 'orderWarning'>* Select the order that the signed delivery receipt is for.</p>
+                </div>
+                <div class = 'form-group'>
+                        <br>
+                        <input type="file"
+                                id="file"
+                                class = "inputfile"
+                                (change)="handleFileInput($event.target.files)"
+                                accept = ".png,.pdf,.jpg,.jpeg, .tif, .tiff"
+                                />
+                                <label for="file">
+                                        <svg xmlns= "http://www.w3.ord/2000/svg" width = "20" height = "17" viewBox = "0 0 20 17">
+                                                <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+
+                                                </path>
+                                        </svg>
+                                        <span id = 'fileName'>Choose a file...</span>
+                                </label>
+                                <br>
+                                <span id = 'acceptedFiles'>Accepted File Types: .png, .pdf,.jpg,.jpeg</span>
+                </div>                 
+                <button type = "button" class = "btn btn-success" [disabled] = "!fileForm.form.valid" (click) =  "uploadFileToActivity(); modal1.show(); fileForm.reset()">
+                        Upload
+                </button>
+        </form>
+  <app-modal #modal1>
+        <img id = 'loading' src = "assets/RJWLoader.gif" *ngIf = '!loading'/>
+        <div class="app-modal-header" *ngIf = 'loading'>
+                Upload Result
+        </div>
+        <div class="app-modal-body" *ngIf = 'loading'>
+                {{result}}
+        </div>
+        <div class="app-modal-footer" *ngIf = 'loading'>
+                <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
+        </div>
+  </app-modal>
+</div>

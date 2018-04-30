@@ -1,0 +1,73 @@
+.ng-pristine {
+    width: 60%;
+}
+.col-xs-8 {
+    width: 100%;
+}
+label{
+    display: inline-block;
+    clear: left;
+    width: 110px;
+    text-align: right;
+    margin-right: 10px;
+}
+input {
+    border-radius: 5px;    
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    height: 30px;
+}
+#profile {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height:800px;
+}
+@media (max-width: 1200px) 
+{
+    #profile{
+    position: relative;
+    overflow-y: auto;
+    max-height:400px;
+  }
+  .form-group {
+    width: 240px;
+    }
+}
+@media (max-width: 767px) 
+{
+    #profile{
+    position: relative;
+    overflow-y: auto;
+    max-height:500px;
+  }
+  .form-group {
+    width: 240px;
+    }
+}
+.modalLabel {
+    width: 120px;
+    padding: 0px;
+    margin:0px;
+    font-size: 11px;
+}
+.form-group {
+    width: 150%
+}
+.ng-touched {
+    width: 60%;
+}
+.ng-untouched {
+    width: 60%;
+}
+.warning {
+    color: red;
+    text-align: center;
+}
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}

@@ -1,0 +1,481 @@
+.headermain {
+    background: #2b2b2b none repeat scroll 0 0;
+    width: 100%;
+    border-top: solid 3px #009999;
+  }
+  #header {
+    background: url("/src/app/images/RJWLoader.gif")
+}
+  .navbar-default {
+    background-color: #2b2b2b;
+    border-color: #2b2b2b;
+  }
+  .container1 {
+    background: #2b2b2b none repeat scroll 0 0;
+    height: 70px;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .nav.navbar-nav.navbar-right {
+    bottom: 90px;
+    position: relative;
+    right: 100px;
+  }
+  
+  .nav.navbar-nav.col-md-9.col-xs-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .nav.navbar-nav.col-md-9 {
+    position: relative;
+    top: 30px;
+    float: right;
+  }
+  
+  .dropdown-menu a:hover {
+  background: #323232;
+  }
+  .topbarniv > a:hover {
+    background: #008686 none repeat scroll 0 0 !important;
+    color: #fff ;
+     font-family: Verdana, Geneva, sans-serif !important;
+     -webkit-font-smoothing: subpixel-antialiased;
+  
+  }
+  .nav.col-md-9 li a {
+    color: #fff ;
+     font-family: Verdana, Geneva, sans-serif !important;
+     -webkit-font-smoothing: subpixel-antialiased;
+     font-size: 11px !important;
+  }
+  .nav li a:hover {
+    color: #009999 ;
+     font-family: Verdana, Geneva, sans-serif !important;
+     -webkit-font-smoothing: subpixel-antialiased;
+  }
+  
+  .public .nav > li {
+        border-top: 1px solid #2b2b2b;
+        border-bottom: none;
+  }
+  .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    background-color: rgb(0, 153, 153);
+  }
+  
+  .dropdown-toggle:hover {
+    color: #fff !important;
+  }
+  .dropdown-menu a {
+    color: #fff !important;
+    font-family: Verdana, Geneva, sans-serif !important;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  .dropdown-menu a:hover {
+    color: #fff !important;
+    font-family: Verdana, Geneva, sans-serif !important;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  .navbar-collapse.collapse.in {
+    background: #2B2B2B none repeat scroll 0 0;
+  }
+  
+  .name a img {
+    position: relative;
+    top: 30px !important;
+  }
+  
+  .menurow1 {
+    position: relative;
+    right: 10%;
+  }
+  .menurow2 {
+    position: relative;
+    right: 8%;
+  }
+  li a:hover {
+    text-decoration: none;
+  }
+  .button.menu-item {
+    position: relative;
+    top: 2px;
+  }
+  .navbar-header a img {
+    position: relative;
+    top: 25px;
+  }
+  
+  
+  .topbarniv > a {
+    background: #009999 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff !important;
+    font-family: Verdana;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 1px 10px !important;
+    top: 2px;
+  }
+  .dropdown.open a {
+    color: #fff !important;
+  }
+  .nav.navbar-nav.navbar-right {
+    display: block ;
+  }
+  .dropdown-menu {
+      background-color: #2b2b2b;
+   }
+  .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    background: #2b2b2b none repeat scroll 0 0;
+    color: #aaa !important;
+  }
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    background-color: #2B2B2B;
+    color: #555;
+    opacity: 0.8;
+  }
+  .dropdown-menu {
+    border: none;
+  }
+  .navbar {
+    margin:0; /*add this*/
+}
+  /*******************************************MQ*****************************************/
+  
+  .content .container {
+      width: 1080px;
+  }
+  /*CSS for Hover Nav*/
+  
+  @media screen and (min-width: 1048px){
+    .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+          display: block;
+      }
+      .dropdown-menu{
+          margin-top: 0;
+      }
+      .dropdown-toggle{
+          margin-bottom: 2px;
+      }
+      .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
+          margin-bottom: 0;
+      }
+  }
+  /*CSS for Hover Nav*/
+  
+  @media (min-width: 280px) and (max-width: 384px) {
+      .navbar-header.col-md-3.col-xs-12 img {
+    width: 75%;
+  }
+  
+  }
+  
+  @media (min-width: 375px) and (max-width: 379px) {
+  
+      body.inner-page header {
+    border-bottom: 1px solid #c9c9c9;
+    margin: 0 auto;
+    padding: 4px 0;
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
+  .contentbox header {
+    left: 5px;
+    position: relative;
+  }
+  
+  
+  }
+  @media (min-width: 280px) and (max-width: 767px) {
+  
+  .nav.navbar-nav.navbar-right {
+    display: none ;
+  }
+  
+  .container1 {
+    background: #2b2b2b none repeat scroll 0 0;
+    height: auto;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .dropdown-toggle {
+    width: 100%;
+  }
+  .nav.navbar-nav.col-md-9 {
+    left: 15px;
+    width: 100%;
+  }
+  
+  .navbar-header a img {
+    position: relative;
+    top: 5px;
+  }
+  
+  .nav.navbar-nav.col-md-9 {
+    position: relative;
+    top: 0px;
+  }
+  .navbar-collapse.collapse.in {
+    border: none;
+  }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1047px) {
+      .nav.navbar-nav.navbar-right {
+    display: none ;
+  }
+  .container1 {
+    background: #2b2b2b none repeat scroll 0 0;
+    height: auto;
+    padding: 0;
+    width: 100%;
+  }
+  .navbar-header a img {
+    position: relative;
+    top: 5px;
+  }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+    .nav.navbar-nav.col-md-9 {
+    left: 30px;
+    position: relative;
+    top: 0;
+  }
+  
+  .navbar-nav .open .dropdown-menu {
+    background-color: transparent;
+    border: 0 none;
+    box-shadow: none;
+    float: none;
+    margin-top: 0;
+    position: static;
+    width: auto;
+  }
+  
+  .open > .dropdown-menu {
+    display: block;
+  }
+  
+  .nav.navbar-nav.col-md-9.col-xs-12 {
+    width: 95%;
+  }
+  .col-md-3 {
+    width: 100%;
+  }
+  }
+  
+  
+  @media (min-width: 1048px) and (max-width: 1140px) {
+  .navbar-nav > li > a {
+    padding: 5px;
+  }
+  .container1 {
+    background: #2b2b2b none repeat scroll 0 0;
+    height: 85px;
+    margin: 0 auto;
+    padding: 0;
+    width: 88%;
+  }
+  .nav.navbar-nav.col-md-9 {
+    font-size: 11px;
+    left: 70px;
+    position: relative;
+    top: 20px;
+  }
+  
+  .nav.navbar-nav.navbar-right {
+    bottom: 90px;
+    position: relative;
+    
+  }
+  .dropdown-menu a {
+    font-size: 11px;
+  }
+  .header {
+    background: #2b2b2b none repeat scroll 0 0;
+    width: 100%;
+  }
+  
+  .nav.col-md-9 li a {
+    color: #fff;
+    font-family: Verdana,Geneva,sans-serif !important;
+    font-size: 9px !important;
+  }
+  
+  .headermain {
+    background: #2b2b2b none repeat scroll 0 0;
+    border-top: 3px solid #009999;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .headermain nav {
+    width: 99%;
+  }
+  }
+  
+  @media (min-width: 1141px) and (max-width: 1280px) {
+  .navbar-nav > li > a {
+    padding: 5px;
+  }
+  
+  .container1 {
+    background: #2b2b2b none repeat scroll 0 0;
+    height: 85px;
+    margin: 0 auto;
+    padding: 0;
+    width: 88%;
+  }
+  .nav.navbar-nav.col-md-9 {
+    font-size: 11px;
+    left: 70px;
+    position: relative;
+    top: 20px;
+  }
+  .nav.navbar-nav.navbar-right {
+    bottom: 90px;
+    position: relative;
+    right: 120px;
+  }
+  .dropdown-menu a {
+    font-size: 11px;
+  }
+  .header {
+    background: #2b2b2b none repeat scroll 0 0;
+    width: 100%;
+  }
+  
+  .headermain {
+    background: #2b2b2b none repeat scroll 0 0;
+    border-top: 3px solid #009999;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .headermain nav {
+    width: 99%;
+  }
+  }
+  @media (min-width: 1281px) and (max-width: 1488px) {
+  .navbar-nav > li > a {
+    padding: 8px;
+  }
+  .container1 {
+    background: #2b2b2b none repeat scroll 0 0;
+    height: 85px;
+    margin: 0 auto;
+    padding: 0;
+    width: 88%;
+  }
+  .nav.navbar-nav.col-md-9 {
+    font-size: 13px;
+    left: 70px;
+    position: relative;
+    top: 20px;
+  }
+  .piublic .nav.navbar-nav.navbar-right {
+    bottom: 20px;
+    position: relative;
+    right: 240px;
+  }
+  .dropdown-menu a {
+    font-size: 12px;
+  }
+  .header {
+    background: #2b2b2b none repeat scroll 0 0;
+    width: 100%;
+  }
+  
+  .headermain {
+    background: #2b2b2b none repeat scroll 0 0;
+    border-top: 3px solid #009999;
+    margin: 0 auto;
+    width: 100%;
+  }
+  }
+  @media (min-width: 1489px) and (max-width: 1543px) {
+  .headermain nav {
+    width: 95%;
+  }
+  .container1 {
+  
+    width: 100%;
+  }
+  }
+  @media (min-width: 1544px) and (max-width: 1564px) {
+  .headermain nav {
+    width: 95%;
+  }
+  .container1 {
+  
+    width: 99%;
+  }
+  }
+  
+  @media (min-width: 1141px) and (max-width: 1404px) {
+  .nav.col-md-9 li a {
+    color: #fff;
+    font-family: Verdana,Geneva,sans-serif !important;
+    font-size: 11px !important;
+  }
+  }
+  .social-slide {
+    height: 28px;
+    width: 28px;
+    margin: 0 5px;
+    float: left;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    transition: all ease .3s
+  }
+  .social-slide:hover {
+    background-position: 0 -28px;
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.8)
+  }
+  .social-slide.linkedin {
+    background-image: url(../images/icons/linkedin-hover.png)
+  }
+  .social-slide.fb {
+    background-image: url(../images/icons/facebook-hover.png)
+  }
+  .social-slide.twitter {
+    background-image: url(../images/icons/twitter-hover.png)
+  }
+  

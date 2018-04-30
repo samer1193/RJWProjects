@@ -1,0 +1,9 @@
+button{
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #099;
+    border-color: #008686;
+    color: #FFFFFF;
+}

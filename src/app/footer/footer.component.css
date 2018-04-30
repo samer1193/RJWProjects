@@ -1,0 +1,96 @@
+
+.containfull {
+    background: #f1f1f1 none repeat scroll 0 0;
+    border-top: 1px solid #c2c2c2;
+    box-shadow: 0 0 1px #c2c2c2;
+    min-height: 140px;
+    padding-top: 20px;
+    
+  }
+  
+  .foot1 h5 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .foot1 p {
+    color: #666;
+  }
+  
+  .foot2 h5 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .foot2 p {
+    color: #666;
+  }
+  .foot2 a {
+    color: #666 !important;
+  }
+  .foot2 li {
+    color: #666;
+  }
+  .nivs {
+    width: 100%;
+  }
+  .nivi1 {
+    width: 50%;
+    float: left;
+  }
+  .nivi2 {
+    width: 50%;
+    float: left;
+  }
+  .foot3 h5 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .foot3 p {
+    color: #666;
+  }
+  .ico {
+    width: 100%;
+  }
+  .ico1 {
+    float: left;
+    margin: 20px 0;
+    width: 25%;
+  }
+  .foot3 a {
+    text-decoration: none;
+  }
+  .nivi1 a:hover {
+    color: #0099ac !important;
+  }
+  .nivi2 a:hover {
+    color: #0099ac !important;
+  }
+  /**************************Footer CSS ENDS HERE**********************/
+  
+  /**************************Sticky Footer CSS ENDS HERE**********************/
+  .aside-widget .body, .aside-widget .textwidget {
+    padding: 20px
+  }
+  hr { 
+    display: block ;
+    margin-top: 0.5em ;
+    margin-bottom: 0.5em ;
+    margin-left: auto ;
+    margin-right: auto ;
+    border-style: inset ;
+    border-width: 1px ;
+}
+
+.button.small {
+  font-size:.9375rem;
+  letter-spacing:.03rem;
+    font-weight: 400;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px 0 #666;
+  padding:.575rem 1.5rem .7375rem
+  }
+
+  a {
+    color: #099;
+    text-decoration: none;
+    line-height: inherit;
+}
