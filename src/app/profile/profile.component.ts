@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   model: any = {};
   CarrierId: string;
   public password: Password = new Password()
-  private loading: boolean;
+  public loading: boolean;
   constructor(
     private route: ActivatedRoute,
     private http:Http,

@@ -40,6 +40,7 @@ export class ManageInvoicesComponent implements OnInit {
   }
 
   handleFileInput(files: FileList) {
+    document.getElementById("fileName").textContent = files[0].name;
     this.fileToUpload = files.item(0);
   }
 

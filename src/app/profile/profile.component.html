@@ -73,31 +73,18 @@
             <form #pwChange="ngForm" id = 'pwChange'>
                 <div class = 'form-group'>
                         <label class = 'modalLabel'><b>Old Password: </b></label>
-<<<<<<< HEAD
-                    <input class = 'resetPw' type = 'password' name = 'oldPw' #oldPw="ngModel" [(ngModel)]="password.password" minlength="6" required>
-=======
                     <input class = 'resetPw' type = 'password' name = 'oldPw' #oldPw="ngModel" [(ngModel)]="password.currentPassword" minlength="6" required>
->>>>>>> CarrierPortalEdits
                     <p *ngIf = "!oldPw.valid && oldPw.touched" class = 'warning'>Must be at least 6 characters.</p>
                 </div>
                 <div class = 'form-group'>
                     <label class = 'modalLabel'><b>New Password: </b></label>
-<<<<<<< HEAD
-                    <input class = 'resetPw' type = 'password' name = 'newPw' #newPw="ngModel" [(ngModel)]="password.currentPassword" minlength="6" required>
-=======
                     <input class = 'resetPw' type = 'password' name = 'newPw' #newPw="ngModel" [(ngModel)]="password.password" minlength="6" required>
->>>>>>> CarrierPortalEdits
                     <p *ngIf = "!newPw.valid && newPw.touched" class = 'warning'>Must be at least 6 characters.</p>
                 </div>
                 <div class = 'form-group'>
                     <label class = 'modalLabel'><b>Confirm Password: </b></label>
-<<<<<<< HEAD
-                    <input class = 'resetPw' type = 'password' name = 'confirmPw' #confirmPw="ngModel" [(ngModel)]="password.confirmPassword" minlength="6" required>
-                    <p *ngIf = "!confirmPw.valid && confirmPw.touched" class = 'warning'>Must be at least 6 characters.</p>
-=======
                     <input class = 'resetPw' type = 'password' name = 'confirmPw' #confirmPw="ngModel" [(ngModel)]="password.confirmPassword" minlength="6" required pattern = "{{password.password}}">
                     <p *ngIf = "!confirmPw.valid && confirmPw.touched" class = 'warning'>Passwords don't match.</p>
->>>>>>> CarrierPortalEdits
                 </div>
                 <div class = form-group>
                 <button type="button" class="pull-right btn btn-default" (click)="pwChange.reset();modal1.hide();">Close</button>

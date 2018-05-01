@@ -35,3 +35,9 @@ ol p {
 #modal1 {
   width: 500px;
 }
+
+@media ( max-width: 420px ){
+  #footer{
+    visibility: hidden
+  }
+}

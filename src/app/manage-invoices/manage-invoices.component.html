@@ -64,18 +64,18 @@
                 </button>
         </form>
   <app-modal #modal1>
-        <div *ngIf = "!loading" class = "loader" >
+        <!-- <div *ngIf = "!loading" class = "loader" >
                 <div class = "centered">
                         <img src = "assets/RJWLoader.gif"/>
                 </div>
-        </div>
-        <div *ngIf = "loading" class="app-modal-header">
+        </div> -->
+        <div  class="app-modal-header">
               Upload Result
         </div>
-        <div *ngIf = "loading" class="app-modal-body">
+        <div class="app-modal-body">
             {{result}}
         </div>  
-        <div *ngIf = "loading" class="app-modal-footer">
+        <div class="app-modal-footer">
                 <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
         </div>
   </app-modal>
