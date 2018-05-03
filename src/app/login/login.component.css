@@ -41,3 +41,8 @@ ol p {
     visibility: hidden
   }
 }
+#loader {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
