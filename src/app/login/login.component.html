@@ -18,13 +18,16 @@
         <div class="form-group">
             <button [disabled]="loading" class="btn btn-primary" style="color:white; background-color: #009999;" id = "btnLogin">Login</button>
         </div>
-        <div>
-            <a  [routerLink] ="['/forgot-password']" [routerLinkActive] = "['active']" routerLinkActive = "{exact:true}"><span>Forgot password? </span></a>
+        <div id = "pwDiv">
+            <a  [routerLink] ="['/forgot-password']" [routerLinkActive] = "['active']" routerLinkActive = "{exact:true}"><span id = 'forgotPw'>Forgot password? </span></a>
         </div>
-        <br>
-        <br>
-        <img id = "loader" src = "assets/RJWLoader2.gif" *ngIf = "loading"/>
     </form>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary" style="color:white; background-color: #009999;" id = "btnTrack"><a id = 'trackLink'href = 'https://portal.rjwgroup.com/#/orders/tracking'>Track an Order</a></button>
+    </div>
+    <br>
+    <br>
+    <img id = "loader" src = "assets/RJWLoader2.gif" *ngIf = "loading"/>
     </div>
 </div>
 </div>
@@ -237,6 +240,8 @@ KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARR
       <button type="button" class="btn btn-default" (click)="accept(); modal1.hide()">Agree</button>
     </div>
   </app-modal>
+<div id = "wrapper">
 <div id = 'footer'>
 <app-footer></app-footer>
+</div>
 </div>

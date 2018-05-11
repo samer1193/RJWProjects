@@ -8,6 +8,7 @@ export class User {
     phoneNumber: string;
     isActive: boolean;
     isAdmin: boolean;
+    isFactor: boolean;
     termsAndConditions: boolean;
     id: string;
     siteRole: SiteRole;

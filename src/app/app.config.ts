@@ -1,5 +1,5 @@
 export class AppConfig {
-    // public readonly apiUrl = 'http://testwww.rjwgroup.com:85'; //Test Server
+    // public readonly apiUrl = 'https://testwww.rjwgroup.com:8443'; //Test Server
     public readonly apiUrl = 'https://portalce.rjwgroup.com'; //Prod Server
-    // public readonly apiUrl = 'http://rjwchiit-dev01.rjwgroup.local:3000'; //Uguudei Local Host
+    // public readonly apiUrl = 'http://rjwchiit-dev01.rjwgroup.local:59432/'; //Uguudei Local Host
 };

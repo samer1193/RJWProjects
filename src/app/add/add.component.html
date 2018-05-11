@@ -22,7 +22,7 @@
   <div class = 'form-group'>
     <label class='col-lg-2 control-label' for="email">Email:</label>
     <div class = 'col-lg-10'>
-      <input  type = 'email' class = 'form-control' [(ngModel)] = "model.email"  name="email" id = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required  empty-to-null>
+      <input  type = 'email' class = 'form-control' [(ngModel)] = "model.email"  name="email" id = "email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$" required  empty-to-null>
     </div>
   </div>
   <div class = 'form-group'>  
@@ -41,6 +41,10 @@
           <input  type='checkbox' i-check [(ngModel)] = "model.isAdmin"  name="isAdmin" id = "isAdmin">
           <label class='control-label' for="isAdmin">Site Administrator</label>
   </div>
+  <div class='col-lg-offset-2 col-lg-10'>
+    <input  type='checkbox' i-check [(ngModel)] = "model.isFactor"  name="isFactor" id = "isFactor">
+    <label class='control-label' for="isFactor">Factoring Company</label>
+</div>
   <h4>Carriers</h4>
   <hr>
   <div class="form-group">
@@ -63,7 +67,7 @@
     </ng-select>
   </div>
   <span><button class = 'btn btn-primary' (click) = 'add(_selected)'>Add</button></span>
-  <table class = 'table table-striper'>
+  <table class = 'table table-striper' id = 'carTable'>
     <thead>
       <tr>
         <th>Name</th>

@@ -17,9 +17,14 @@ export class fileUploadService {
             private config: AppConfig
         ) { }
 
-    postFile(fileToUpload: File, orderId: string,docType:string, refnumber: string, movenumber: number){  //:Observable<Invoices[]> 
+    postFile(fileToUpload: File, orderId: string,docType:string, refnumber: string, movenumber: number, linehaul: string, accList: Array<any>){
         const formData: FormData = new FormData();
         formData.append('filekey',fileToUpload,fileToUpload.name);
+        var data = {
+            file: formData,
+            lh: linehaul,
+            acc: accList
+        }
         const httpOptions = {
             headers: new HttpHeaders({
             //   'Content-Type':  'application/json',
@@ -30,7 +35,7 @@ export class fileUploadService {
 
         this.apiUrl = this.config.apiUrl + '/api/Carriers/UploadDoc/?Doctype=' + docType + '&Refnumber=' + refnumber + '&Movenumber=' + movenumber +'&orderID=' +orderId
         return this.http
-        .post(this.apiUrl, formData,httpOptions);
+        .post(this.apiUrl, data,httpOptions);
     }
     getLoads(){
         const httpOptions = {

@@ -6,7 +6,10 @@ input {
     width: auto;
     position: left;
 }
-
+#isFactor {
+    width: auto;
+    position: left;
+}
 .text-right {
     position: absolute;
     right: 26%;
@@ -24,11 +27,31 @@ table {
 label {
     width: 15%;
 }
-#fileForm {
+/* #carTable {
     position: relative;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
-    max-height:800px;
+    max-height:200px;
+} */
+table.table-striper {
+    display: table;
+    width: 100%;
+}
+table.table-striper thead, table.table-striper tbody {
+    float: left;
+    width: 100%;
+}
+table.table-striper tbody {
+    overflow: auto;
+    height: 150px;
+}
+table.table-striper tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+table.table-striper th, table.table-striper td {
+    width: 33%;
 }
 @media (max-width: 1200px) 
 {
@@ -43,6 +66,6 @@ label {
     #fileForm{
     position: relative;
     overflow-y: auto;
-    max-height:500px;
+    max-height:400px;
   }
 }

@@ -17,7 +17,7 @@ export class AddComponent implements OnInit {
   public search: string;
   public _selected: string;
   public selectedCarriers: any = [] ;
-
+  public returnUrl: string;
   constructor
   (private UserService: UserService,
     private route: ActivatedRoute,
@@ -32,6 +32,7 @@ export class AddComponent implements OnInit {
     this.model.contactAddress = '';
     this.model.phoneNumber = '';
     this.model.isAdmin = false;
+    this.model.isFactor = false;
     this.UserService.roles()
     .subscribe(
       (data: SiteRole) => {
@@ -71,12 +72,15 @@ export class AddComponent implements OnInit {
 
   }
   save(){
+    this.returnUrl = '/dashboard/admin/'
     this.model.carriers = this.selectedCarriers
     if (this.selectedCarriers.length > 0){
     this.UserService.add(this.model)
     .subscribe(
       data => {
-        this.showSuccess('User successfully added!')
+        this.router.navigate([this.returnUrl]).then(() => {
+          this.toastr.success('User successfully added!', 'Success!', {dismiss: 'click', toastLife: 2000, animate: 'flyLeft'});
+        })
       }, error => {
         this.showError(error.error.message)
       }
@@ -84,6 +88,5 @@ export class AddComponent implements OnInit {
   } else {
     this.showError('A user must have at least one carrier assigned to them.')  
   }
-    console.log(this.model)
   }
 }

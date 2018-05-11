@@ -3,7 +3,7 @@ import { fileUploadService, AlertService} from '../_services/index';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Message } from '../manage-invoices/manage-invoices.model'
+import { Message, accList } from '../manage-invoices/manage-invoices.model'
 import { NgOption } from '@ng-select/ng-select';
 import { delay } from 'rxjs/operators';
 
@@ -29,13 +29,19 @@ export class ManageInvoicesComponent implements OnInit {
   public dataResultMovement: Array<{}>;
   public _selected: string;
   public loading = false;
-  
+  public accessorials = {} as accList;
+  public accList= [];
+  public added: boolean;
+  accTypes = ['Detention','Driver Assist','FSC', 'Hazmat','Layover Pay', 'Lumper','Miscellaneous Charges','Pickup Fee','Stop Off Pay'];
+  public lhRequired: boolean;
   constructor(
     private fileUploadService: fileUploadService
   ) { }
 
   ngOnInit() {
     this.model = null;
+    this.added = false;
+    this.lhRequired = true;
     this.getLoads()
   }
 
@@ -48,8 +54,9 @@ export class ManageInvoicesComponent implements OnInit {
     // if (this.fileToUpload.type == 'application/pdf' || this.fileToUpload.type == 'image/png'|| this.fileToUpload.type == 'image/jpg'|| this.fileToUpload.type == 'image/jpeg') {
       console.log(this.model);
       console.log(this._selected);
+      this.accessorials.linehaul = parseFloat(this.accessorials.linehaul.valueOf()).toFixed(2)
     if(this.model.walmartYesNo == 'Y'){
-      this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber)
+      this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber, this.accessorials.linehaul, this.accList)
         .subscribe(
           result => {
             this.message = result as any;
@@ -60,7 +67,7 @@ export class ManageInvoicesComponent implements OnInit {
         } 
         )
     } else if ( this.model.walmartYesNo == 'N' && this._docType == 'Signed Delivery Receipt'){
-      this.fileUploadService.postFile(this.fileToUpload, this._selected,this._docType,this.model.refnumber, this.model.movenumber)
+      this.fileUploadService.postFile(this.fileToUpload, this._selected,this._docType,this.model.refnumber, this.model.movenumber, '',[])
         .subscribe(
           result => {
             this.message = result as any;
@@ -70,7 +77,7 @@ export class ManageInvoicesComponent implements OnInit {
         } 
         )
     } else {
-      this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber)
+      this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber,'',[])
         .subscribe(
           result => {
             this.message = result as any;
@@ -81,9 +88,7 @@ export class ManageInvoicesComponent implements OnInit {
         )
     }
   }
-  test(val){
-    console.log(val);
-  }
+
   onChange(val){
     console.log(val)
     if (val === undefined){
@@ -102,11 +107,44 @@ export class ManageInvoicesComponent implements OnInit {
       }
     )
   }
+  addAccessorials(){
+    this.added = true;
+    let acc = {} as accList;
+    acc.type = this.accessorials.type;
+    this.accessorials.accessorial = parseFloat(this.accessorials.accessorial.valueOf()).toFixed(2)
+    acc.accessorial = this.accessorials.accessorial
+    this.accList.push(acc);
+    this.accTypes = this.accTypes.filter(item => item !== acc.type)
+    console.log(this.accList)
+    console.log(this.accessorials.linehaul)
+  }
+  remove(acc){
+    this.accList = this.accList.filter(item => item !== acc)
+    this.accTypes.push(acc.type);
+    this.accTypes.sort();
+  }
+  
+  lhCheck(){
+    console.log(this._docType)
+    if (this._docType === 'Carrier Invoice'){
+      this.lhRequired = false;
+    } else {
+      this.lhRequired = true;
+    }
+  }
+
+  lhFlag(){
+    var length = Math.log10(parseFloat(this.accessorials.linehaul.valueOf()))+1
+    if(length < 0){
+      this.lhRequired = false;
+    } else {
+      this.lhRequired = true;
+    }
+  }
   public show(): void {
     this.visible = true;
     setTimeout(() => this.visibleAnimate = true, 100);
   }
-
   public hide(): void {
     this.visibleAnimate = false;
     setTimeout(() => this.visible = false, 300);

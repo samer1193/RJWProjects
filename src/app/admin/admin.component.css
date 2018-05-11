@@ -7,3 +7,6 @@ button{
     border-color: #008686;
     color: #FFFFFF;
 }
+.ag-theme-balham .ag-row-odd {
+    background-color: lightgray;
+}

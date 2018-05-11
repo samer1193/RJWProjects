@@ -23,6 +23,25 @@
     min-width: 200px;
     margin-bottom: 6px;
   }
+  #linehaul {
+    width: 20%;
+    min-width: 200px;
+    margin: 6px 0px;
+  }
+  #type {
+    width: 20%;
+    min-width: 200px;
+    margin-bottom: 6px;
+    margin-right: 0;
+    display: inline-block;
+  }
+  #accessorial {
+    width: 20%;
+    min-width: 200px;
+    margin-bottom: 6px;
+    margin-right: 0;
+    display: inline-block;
+  }
   .alert, .alert-danger {
     width: 20%;
   }
@@ -71,4 +90,15 @@
 }
 #upload {
   min-width: 200px;
+}
+#typeGrp {
+  margin-right: 0px;
+}
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
