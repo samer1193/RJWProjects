@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -38,6 +39,9 @@ import { AddComponent } from './add/add.component';
 import { CarriersComponent } from './carriers/carriers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{ ToastModule } from 'ng2-toastr/ng2-toastr';
+import * as $ from 'jquery';
+import { TooltipModule } from 'ngx-tooltip';
+import { DocumentComponent } from './document/document.component'
 
 @NgModule({
     imports: [
@@ -48,6 +52,7 @@ import{ ToastModule } from 'ng2-toastr/ng2-toastr';
         HttpClientModule,
         RouterModule,
         AgGridModule.withComponents([
+            [DocumentComponent]
         ]),
         InterceptorModule,
         NgbModule.forRoot(),
@@ -55,8 +60,8 @@ import{ ToastModule } from 'ng2-toastr/ng2-toastr';
         [NgSelectModule],
         PdfViewerModule,
         ToastModule.forRoot(),
-        BrowserAnimationsModule
-        
+        BrowserAnimationsModule,
+        TooltipModule
     ],
     declarations: [
         AppComponent,
@@ -75,7 +80,8 @@ import{ ToastModule } from 'ng2-toastr/ng2-toastr';
         TermsComponent,
         EditComponent,
         AddComponent,
-        CarriersComponent
+        CarriersComponent,
+        DocumentComponent
     ],
     providers: [
         AppConfig,

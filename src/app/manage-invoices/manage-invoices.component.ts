@@ -51,10 +51,11 @@ export class ManageInvoicesComponent implements OnInit {
   }
 
   uploadFileToActivity() {
-    // if (this.fileToUpload.type == 'application/pdf' || this.fileToUpload.type == 'image/png'|| this.fileToUpload.type == 'image/jpg'|| this.fileToUpload.type == 'image/jpeg') {
-      console.log(this.model);
-      console.log(this._selected);
-      this.accessorials.linehaul = parseFloat(this.accessorials.linehaul.valueOf()).toFixed(2)
+    this.result = '';
+    this.lhRequired = true;
+    if ( this._docType === 'Carrier Invoice'){
+    this.accessorials.linehaul = parseFloat(this.accessorials.linehaul.valueOf()).toFixed(2)
+  }
     if(this.model.walmartYesNo == 'Y'){
       this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber, this.accessorials.linehaul, this.accList)
         .subscribe(
@@ -62,34 +63,58 @@ export class ManageInvoicesComponent implements OnInit {
             this.message = result as any;
             this.result = this.message.message
             this.loading = true;
+            this.accTypes = ['Detention','Driver Assist','FSC', 'Hazmat','Layover Pay', 'Lumper','Miscellaneous Charges','Pickup Fee','Stop Off Pay'];
+            this.accList = [];
+            this.accessorials.linehaul = '';
+            this._docType = null
+            this.model = null;
+            this.lhRequired = false;
         }, error => {
-          console.log(error)
+          this.result = error.error.message;
+          console.log('11111' + error)
         } 
         )
     } else if ( this.model.walmartYesNo == 'N' && this._docType == 'Signed Delivery Receipt'){
-      this.fileUploadService.postFile(this.fileToUpload, this._selected,this._docType,this.model.refnumber, this.model.movenumber, '',[])
+      this.fileUploadService.postFile(this.fileToUpload, this._selected,this._docType,this.model.refnumber, this.model.movenumber, this.accessorials.linehaul,this.accList)
         .subscribe(
           result => {
             this.message = result as any;
             this.result = this.message.message
+            this.accTypes = ['Detention','Driver Assist','FSC', 'Hazmat','Layover Pay', 'Lumper','Miscellaneous Charges','Pickup Fee','Stop Off Pay'];
+            this.accList = [];
+            this.accessorials.linehaul = '';
+            this._docType = null
+            this.model = null;
+            this.lhRequired = false;
         }, error => {
-          console.log(error)
+          this.result = error.error.message;
+          console.log('22222' + error)
         } 
         )
     } else {
-      this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber,'',[])
+      this.fileUploadService.postFile(this.fileToUpload, this.model.orders[0],this._docType,this.model.refnumber, this.model.movenumber, this.accessorials.linehaul, this.accList)
         .subscribe(
           result => {
             this.message = result as any;
             this.result = this.message.message
+            this.accTypes = ['Detention','Driver Assist','FSC', 'Hazmat','Layover Pay', 'Lumper','Miscellaneous Charges','Pickup Fee','Stop Off Pay'];
+            this.accList = [];
+            this.accessorials.linehaul = '';
+            this._docType = null
+            this.model = null;
+            this.lhRequired = false;
         }, error => {
-          console.log(error)
+          this.result = error.error.message;
+          console.log('33333' + error)
         } 
         )
     }
   }
 
   onChange(val){
+    this.accTypes = ['Detention','Driver Assist','FSC', 'Hazmat','Layover Pay', 'Lumper','Miscellaneous Charges','Pickup Fee','Stop Off Pay'];
+    this.accList = [];
+    this.accessorials.linehaul = '';
     console.log(val)
     if (val === undefined){
       this.dataResultMovement = [];

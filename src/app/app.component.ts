@@ -1,5 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'app',

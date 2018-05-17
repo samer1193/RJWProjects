@@ -1,121 +1,123 @@
- /* CSS used here will be applied after bootstrap.css */
- @media (min-width: 1200px) {
-.navbar-fixed-left {
-  width: 8%;
-  position: fixed;
-  border-radius: 0;
-  height: 100%;
-  background-color: #e5e5e5;
-  border: 0;
-  padding-right: 0px;
-  margin-right: 0px;
-}
-.ng-select .ng-control {
-  left: 200px;
-}
- }
-.navbar-fixed-left .navbar-nav > li { 
-  float: none;  
-  width: 100%;
-}
-
-.active {
-  border-bottom: 3px solid #099;
-  background: #eee;
-}
-.container {
-  height: 100%;
-}
-a {
-  color: #099;
-}
-.navbar {
-  margin-bottom: 0px;
-}
-#header {
-  height: 50px;
-  background-color:#222;
-  padding-bottom: 0px;
-  margin-bottom: 0%;
-}
-/* #page {
-  position: relative;
-  overflow-y: auto;
-  white-space: nowrap;
-  height: 100%;
-  width: 100%;
-} */
-/* .navbar-inverse .navbar-nav > li > a {
-  color: #099;
-} */
- #logout {
-   color:white;
-   background-color: transparent;
-   border-color: transparent;
- }
-#logoutResp {
-  color:#099;
-  background-color: transparent;
-  border-color: transparent;
-}
- /* .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: black;
-}  */
-
-#top-responsive {
-  display: none;
-}
-
-#top-menu {
-  display: block;
-}
-#Carrier {
-  position: absolute;
-  display: inline;
-  bottom: 7px;
-  width: 40%;
-  color: #000;
-}
-
-@media (max-width: 767px) 
-{
-  #top-responsive {
-      display: block;
-      background-color: #e5e5e5;
-      padding-left: 2px;
-  }
-
-  #top-menu {
-      display: none;
-      background-color: #e5e5e5;
-  }
+@media (min-width: 1200px) {
   .navbar-fixed-left {
+    width: 8%;
+    position: fixed;
+    border-radius: 0;
+    height: 100%;
     background-color: #e5e5e5;
-    border: 0px;
+    border: 0;
+    padding-right: 0px;
+    margin-right: 0px;
   }
-  #Carrier {
+  .ng-select .ng-control {
     left: 200px;
   }
-}
-@media ( max-width: 420px ){
-  #Carrier{
-    visibility: hidden
+   }
+  .navbar-fixed-left .navbar-nav > li { 
+    float: none;  
+    width: 100%;
   }
-}
-.col-lg-2 {
-  padding: 0px;
-  background-color: #e5e5e5;
-}
-.navbar-inverse {
-  background-color: #e5e5e5;
-  border-color: #e5e5e5
-}
-#users {
-  color: #099;
-  margin-left: 6px;
-  cursor: pointer;
-}
-
-#btn-1 {
-  cursor: pointer;
+  
+  .active {
+    border-bottom: 3px solid #099;
+    background: #eee;
+  }
+  .container {
+    height: 100%;
+  }
+  a {
+    color: #099;
+  }
+  .navbar {
+    margin-bottom: 0px;
+  }
+  #header {
+    height: 50px;
+    background-color:#222;
+    padding-bottom: 0px;
+    margin-bottom: 0%;
+  }
+  /* #page {
+    position: relative;
+    overflow-y: auto;
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+  } */
+  /* .navbar-inverse .navbar-nav > li > a {
+    color: #099;
+  } */
+   #logout {
+     color:white;
+     background-color: transparent;
+     border-color: transparent;
+   }
+  #logoutResp {
+    color:#099;
+    background-color: transparent;
+    border-color: transparent;
+  }
+   /* .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: black;
+  }  */
+  
+  #top-responsive {
+    display: none;
+  }
+  
+  #top-menu {
+    display: block;
+  }
+  #Carrier {
+    position: absolute;
+    display: inline;
+    bottom: 7px;
+    width: 40%;
+    color: #000;
+  }
+  
+  @media (max-width: 767px) 
+  {
+    #top-responsive {
+        display: block;
+        background-color: #e5e5e5;
+        padding-left: 2px;
+    }
+  
+    #top-menu {
+        display: none;
+        background-color: #e5e5e5;
+    }
+    .navbar-fixed-left {
+      background-color: #e5e5e5;
+      border: 0px;
+    }
+    #Carrier {
+      left: 200px;
+    }
+  }
+  @media ( max-width: 420px ){
+    #Carrier{
+      visibility: hidden
+    }
+  }
+  .col-lg-2 {
+    padding: 0px;
+    background-color: #e5e5e5;
+  }
+  .navbar-inverse {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5
+  }
+  #users {
+    color: #099;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+  
+  #btn-1 {
+    cursor: pointer;
+  }
+  .tooltip {
+    font-size: 10px;
 }

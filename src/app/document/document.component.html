@@ -1,0 +1,19 @@
+<span *ngIf = '!check' style="color: red">
+  <span
+    tooltip="Files required for invoicing: {{ missing }}"
+    [tooltipDisabled]="false"
+    [tooltipAnimation]="true"
+    tooltipPlacement="right"
+    tooltip-append-to-body="true">
+    <i class="fa fa-times fa-2x"></i>
+  </span>  
+</span>
+<span *ngIf = 'check' style="color: green">
+  <span
+  tooltip="All necessary documents submitted."
+  [tooltipDisabled]="false"
+  [tooltipAnimation]="true"
+  tooltipPlacement="right"
+  tooltip-append-to-body="true">
+  <i class="fa fa-check-square fa-2x"></i>
+</span>

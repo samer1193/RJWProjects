@@ -26,7 +26,7 @@
       "../node_modules/ag-grid/dist/styles/ag-theme-balham-dark.css",
       "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

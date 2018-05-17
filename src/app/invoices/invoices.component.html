@@ -1,8 +1,15 @@
-<h4>Invoices</h4>
+<h4>Invoices
+        <span tooltip="Invoices shown are less than 60 days old."
+                [tooltipDisabled]="false"
+                [tooltipAnimation]="true"
+                tooltipPlacement="right">
+                <i class="fa fa-question-circle"></i>
+        </span>
+</h4>
 <hr>
 <!-- <div class = "container-fluid"> -->
 <ag-grid-angular 
-        style="width: 90%; height: 40em;"
+        style="width: 92%; height: 40em;"
         class="ag-theme-balham"
         (gridReady)="onGridReady($event)"
         [columnDefs]="columnDefs"
